@@ -1,5 +1,5 @@
-# Elasticworx on EKS
-Running Elasticsearch backed by Portworx on EKS
+# Kafka-px on EKS
+Running Confluent Kafka backed by Portworx on EKS
 
 ## Deploy EKS Cluster
 ```

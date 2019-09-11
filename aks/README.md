@@ -1,4 +1,4 @@
-# Elasticsearch-px test on AKS
+# Kafka-px test on AKS
 
 ## Pre-requisites
 1. Azure account
