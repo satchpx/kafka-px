@@ -1,2 +1,2 @@
-# kafka-px
-Running kafka on Kubernetes backed by Portworx Volumes
+# elasticworx
+Confluent Kafka running on [Portworx](https://docs.portworx.com)
