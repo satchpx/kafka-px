@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+
+# create a topic
+kubectl -n confluent exec confluent-cp-kafka-0 \
+    -c cp-kafka-broker \
+    -- kafka-topics \
+    --zookeeper confluent-cp-zookeeper.confluent:2181 \
+    --create --topic test \
+    --partitions 6 \
+    --replication-factor 3
+
+# Generate and write dummy data
+while true; do
+    kubectl -n confluent exec confluent-cp-kafka-0 \
+        -c cp-kafka-broker \
+        -- kafka-producer-perf-test \
+        --topic test \
+        --num-records 1000000 \
+        --record-size 100000 \
+        --throughput -1 \
+        --producer-props acks=1 \
+        bootstrap.servers=confluent-cp-kafka.confluent:9092
+done
