@@ -51,7 +51,7 @@ kubectl apply -f manifests/portworx-storageclasses.yaml
 
 ### Deploy Kafka helm chart
 ```
-helm  upgrade --wait --timeout=600 --install --values manifests/kafka-values-px-rf3.yaml kafka ../helm-charts/confluent
+helm  install --name confluent --namespace confluent --values manifests/kafka-values-px-rf3.yaml ../helm-charts/confluent
 ```
 
 ### Update the service to have it scraped by prometheus

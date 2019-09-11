@@ -56,11 +56,11 @@ cp-kafka:
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
     limits:
-      cpu: 14
-      memory: 50Gi
+      cpu: 2
+      memory: 4Gi
     requests:
-      cpu: 14
-      memory: 50Gi
+      cpu: 2
+      memory: 4Gi
   schedulerName: stork
 
 ## ------------------------------------------------------
