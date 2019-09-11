@@ -21,4 +21,5 @@ while true; do
         --throughput -1 \
         --producer-props acks=1 \
         bootstrap.servers=confluent-cp-kafka.confluent:9092
+    sleep 60
 done
