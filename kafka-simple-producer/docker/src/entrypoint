@@ -5,7 +5,7 @@ topic='test'
 num_records='100000'
 record_size='10000'
 
-cnt=$(kafka-topics --zookeeper confluent-cp-zookeeper:2181 --list | grep ${topic} | wc -l )
+cnt=$(kafka-topics --zookeeper confluent-cp-zookeeper.confluent:2181 --list | grep ${topic} | wc -l )
 
 if [ "${cnt}" -eq 0 ]; then
     # create a topic
