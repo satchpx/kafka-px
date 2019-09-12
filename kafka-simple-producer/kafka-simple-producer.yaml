@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-kafka-producer
+  labels:
+    app: simple-kafka-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-kafka-producer
+  template:
+    metadata:
+      labels:
+        app: simple-kafka-producer
+    spec:
+      containers:
+      - name: simple-kafka-producer
+        image: satchpx/simple-kafka-producer:0.1
+        imagePullPolicy: Always
+        command: [ "/opt/bin/entrypoint" ]
