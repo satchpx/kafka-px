@@ -19,7 +19,8 @@ spec:
       - name: simple-kafka-producer
         image: satchpx/simple-kafka-producer:0.1
         imagePullPolicy: Always
-        command: [ "tail -f /dev/null" ]
+        command: [ "/bin/sleep"]
+        args: ["infinity" ]
         env:
           - name: MY_NODE_NAME
             valueFrom:
