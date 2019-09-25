@@ -83,5 +83,5 @@ kubectl apply -f manifests/grafana-lb.yaml -n monitoring
 
 ### Deploy Kafka Producer to generate random data
 ```
-kubectl apply -f <TBD>
+kubectl apply -f ../kafka-simple-producer/kafka-simple-producer.yaml
 ```
