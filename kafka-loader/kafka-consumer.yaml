@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: kafka-consumer
-  serviceName: kafka-producer
+  serviceName: kafka-consumer
   template:
     metadata:
       labels:
@@ -29,3 +29,17 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-consumer
+  labels:
+    app: kafka-consumer
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: kafka-consumer
