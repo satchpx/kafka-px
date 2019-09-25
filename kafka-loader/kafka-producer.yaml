@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       app: kafka-producer
+  serviceName: kafka-producer
   template:
     metadata:
       labels:
