@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+POD_ID=`echo ${MY_POD_NAME} | cut -d- -f3`
+TOPIC=test-${POD_ID}
+
+cnt=$(kafka-topics --zookeeper confluent-cp-zookeeper.confluent:2181 --list | grep ${TOPIC} | wc -l )
+
+while [ $cnt -le 0 ]; do
+    cnt=$(kafka-topics --zookeeper confluent-cp-zookeeper.confluent:2181 --list | grep ${TOPIC} | wc -l )
+    if [ $cnt -gt 0 ]; then
+        break
+    fi
+done
+
+# Run the consumer
+kafka-verifiable-consumer --topic ${TOPIC} \
+    --broker-list confluent-cp-kafka-headless.confluent:9200 \
+    --group-id group-${POD_ID}
