@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simple-kafka-producer
-        image: satchpx/simple-kafka-producer:0.1
+        image: satchpx/kafka-producer:0.1
         imagePullPolicy: Always
         command: [ "/bin/sleep"]
         args: ["infinity" ]
