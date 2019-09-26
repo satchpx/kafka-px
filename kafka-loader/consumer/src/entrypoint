@@ -14,5 +14,5 @@ done
 
 # Run the consumer
 kafka-verifiable-consumer --topic ${TOPIC} \
-    --broker-list confluent-cp-kafka-headless.confluent:9200 \
+    --broker-list confluent-cp-kafka-headless.confluent:9092 \
     --group-id group-${POD_ID}
