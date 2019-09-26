@@ -5,12 +5,12 @@ TOPIC=test-${POD_ID}
 
 # Create the topic
 kafka-topics --create --topic ${TOPIC} \
-    --replication-factor 3
-    --partitions 3
+    --replication-factor 3 \
+    --partitions 3 \
     --zookeeper confluent-cp-zookeeper.confluent:2181
 
 # Run the producer
 kafka-verifiable-producer --topic ${TOPIC} \
     --broker-list confluent-cp-kafka-headless.confluent:9200 \
-    --max-messages 100000000
+    --max-messages 100000000 \
     --repeating-keys 100
