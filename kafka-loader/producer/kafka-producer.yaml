@@ -19,8 +19,7 @@ spec:
       - name: simple-kafka-producer
         image: satchpx/kafka-producer:0.1
         imagePullPolicy: Always
-        command: [ "/bin/sleep"]
-        args: ["infinity" ]
+        command: [ "/opt/bin/entrypoint"]
         env:
           - name: MY_NODE_NAME
             valueFrom:
